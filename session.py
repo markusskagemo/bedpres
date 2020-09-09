@@ -75,7 +75,7 @@ class VevenSession(object):
         print('Valid cookies:', valid)
         return valid
         
-    def get_cookies(self) -> None:
+    async def get_cookies(self) -> None:
         if self.cookies is None:
             print('Fetching new cookies with webdriver.')
             self.cookies = await self._get_veven_cookies()
