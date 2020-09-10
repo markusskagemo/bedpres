@@ -1,0 +1,4 @@
+python_box>=5.1.1
+requests>=2.22.0
+pyppeteer<=0.2.2
+PyYAML>=5.3.1
