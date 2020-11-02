@@ -5,6 +5,7 @@ import concurrent.futures
 import asyncio
 import bios
 import yaml
+import random
 
 from box import Box
 from typing import Dict
@@ -57,5 +58,6 @@ if __name__ == '__main__':
     
     # Register all users cfg.attempts times
     session_list = list(sessions.values()) * cfg.attempts
+    random.shuffle(session_list)
     responses = threaded_timed_mass_register(trigger, session_list)
     print([r.status_code for r in responses])
