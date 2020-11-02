@@ -1,6 +1,6 @@
 # bedpres  
-```pip3 install -r requirements.txt```
-```python3 bedpres.py```
+```pip3 install -r requirements.txt```  
+```python3 bedpres.py```  
 
 #### Parameter formats (assets/config.yml)
 ```yaml
