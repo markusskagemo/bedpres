@@ -1,14 +1,13 @@
 # bedpres  
 ```pip3 install -r requirements.txt```
 
-#### Parameter formats
-```python
-trigger = dt.datetime(year=2020, month=9, day=9, hour=22, minute=12)
-event_url = 'https://omega.ntnu.no/events/show/123'
-credentials = {
-    'user1': 'pass1',
-    'user2': 'pass2',
-    
-    'userN': 'passN',
-}
+#### Parameter formats (assets/config.yml)
+```yaml
+attempts: 10
+trigger: '2020-11-02 12:00'
+event_url: 'https://omega.ntnu.no/events/show/541'
+users:
+    user1: 'pw1'
+    user2: 'pw2'
+    user3: 'pw3'
 ```
