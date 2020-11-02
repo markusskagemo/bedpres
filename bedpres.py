@@ -2,14 +2,13 @@ import datetime as dt
 import pandas as pd
 import time
 import asyncio
-import bios
 import yaml
 import random
 
+from concurrent.futures import ThreadPoolExecutor
+from session import VevenSession
 from box import Box
 from typing import Dict
-from session import VevenSession
-from concurrent.futures import ThreadPoolExecutor
 
 
 async def mass_get_cookies(credentials: Dict[str, str], event_url):
