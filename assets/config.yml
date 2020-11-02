@@ -1,4 +1,4 @@
-attempts: 10
+attempts: 3
 trigger: '2020-11-02 21:10'
 event_url: 'https://omega.ntnu.no/events/show/541'
 users:

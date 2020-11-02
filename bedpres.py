@@ -1,7 +1,6 @@
 import datetime as dt
 import pandas as pd
 import time
-import concurrent.futures
 import asyncio
 import bios
 import yaml
@@ -10,6 +9,7 @@ import random
 from box import Box
 from typing import Dict
 from session import VevenSession
+from concurrent.futures import ThreadPoolExecutor
 
 
 async def mass_get_cookies(credentials: Dict[str, str], event_url):
@@ -31,7 +31,7 @@ def threaded_timed_mass_register(trigger, session_list):
     
     print('\nStarting registers. Time:', dt.datetime.now())
     t0 = time.time()
-    with concurrent.futures.ThreadPoolExecutor(max_workers=10) as exec:
+    with ThreadPoolExecutor(max_workers=len(session_list)) as exec:
         responses = list(exec.map(
             lambda session: session.register(), session_list
         ))
