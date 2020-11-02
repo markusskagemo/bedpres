@@ -61,7 +61,7 @@ class VevenSession(object):
         print('New cookies fetched.')
         return cookies
     
-    def _valid_cookies(self) -> bool:
+    def _is_valid_cookies(self) -> bool:
         """Send mock request to assert status code 200."""
         if self.cookies is None:
             return False
@@ -78,15 +78,15 @@ class VevenSession(object):
     async def get_cookies(self) -> None:
         if self.cookies is None:
             print('Fetching new cookies with webdriver.')
-            self.cookies = await self._get_veven_cookies()
-            self.cookies = self._parse_cookies(self.cookies)
-            self._valid_cookies() # Check
+            cookies = await self._get_veven_cookies()
+            self.cookies = self._parse_cookies(cookies)
+            self._is_valid_cookies() # Check
         else:
             # Check validity of currently loaded cookies
             if not self._valid_cookies():
                 print('Cookies are invalid. Fetching new ones.')
                 cookies = await self._get_veven_cookies()
-                self.cookies = self._parse_cookies(self.cookies)
+                self.cookies = self._parse_cookies(cookies)
     
     def register(self):
         if self.cookies is None:
