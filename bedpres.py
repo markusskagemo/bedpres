@@ -45,9 +45,7 @@ if __name__ == '__main__':
     # Get cookies
     creds = dict(cfg.users)
     loop = asyncio.get_event_loop()
-    sessions = loop.run_until_complete(
-        mass_get_cookies(creds, cfg.event_url)
-    )
+    sessions = loop.run_until_complete(mass_get_cookies(creds, cfg.event_url))
     loop.close()
     
     # Register all users cfg.attempts times
