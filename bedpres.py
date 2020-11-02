@@ -36,17 +36,12 @@ def threaded_timed_mass_register(trigger, session_list):
             lambda session: session.register(), session_list
         ))
     print('%.5fs elapsed' % (time.time() - t0))
-
     return responses
 
 
 if __name__ == '__main__':
     with open("assets/config.yml", "r") as ymlfile:
         cfg = Box(yaml.safe_load(ymlfile))
-    
-    trigger = pd.to_datetime(
-        cfg.trigger, format='%Y-%m-%d %H:%M'
-    )
     
     # Get cookies
     creds = dict(cfg.users)
@@ -59,5 +54,6 @@ if __name__ == '__main__':
     # Register all users cfg.attempts times
     session_list = list(sessions.values()) * cfg.attempts
     random.shuffle(session_list)
+    trigger = pd.to_datetime(cfg.trigger, format='%Y-%m-%d %H:%M')
     responses = threaded_timed_mass_register(trigger, session_list)
-    print([r.status_code for r in responses])
+    print('status codes:', [r.status_code for r in responses])
