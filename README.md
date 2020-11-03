@@ -2,7 +2,7 @@
 ```pip3 install -r requirements.txt```  
 ```python3 bedpres.py```  
 
-#### Parameter formats (assets/config.yml)
+#### Parameter formats (config.yml)
 ```yaml
 attempts: 10
 trigger: '2020-11-02 12:00'

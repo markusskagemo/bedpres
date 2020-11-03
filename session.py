@@ -15,7 +15,7 @@ from typing import Dict, List
 class VevenSession(object):
     """Cookie fetching and management for omega.ntnu.no"""
     def __init__(self, event_url, username, password, cookies=None):
-        with open("assets/config.yml", "r") as ymlfile:
+        with open('config.yml', 'r') as ymlfile:
             self.config = Box(yaml.safe_load(ymlfile))
             
         self.event_url = event_url
