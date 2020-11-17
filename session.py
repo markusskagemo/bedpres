@@ -56,6 +56,9 @@ class VevenSession(object):
         await page.click('li:nth-child(2) > a')
         time.sleep(1)
         
+        await page.goto(self.event_url)
+        time.sleep(1)
+        
         cookies = await page.cookies()
         await browser.close()
         print('New cookies fetched.')

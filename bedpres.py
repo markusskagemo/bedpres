@@ -30,6 +30,10 @@ def threaded_timed_mass_register(trigger, session_list):
     
     print('\nStarting registers. Time:', dt.datetime.now())
     t0 = time.time()
+    #
+    #session_list[0].register()
+    print(vars(session_list[0]))
+    #
     with ThreadPoolExecutor(max_workers=len(session_list)) as exec:
         responses = list(exec.map(
             lambda session: session.register(), session_list

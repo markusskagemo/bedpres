@@ -1,7 +1,8 @@
-attempts: 3
-trigger: '2020-11-03 13:17'
-event_url: 'https://omega.ntnu.no/events/show/541'
+attempts: 5
+trigger: '2020-11-17 15:45'
+event_url: 'https://omega.ntnu.no/events/show/545'
 users:
-    user1: 'password1'
+    user1: 'pass1'
+    user2: 'pass2'
 
 user_agent: 'Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36'
